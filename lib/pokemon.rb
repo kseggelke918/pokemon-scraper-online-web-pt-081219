@@ -13,8 +13,8 @@ class Pokemon
       sql = <<-SQL
       INSERT INTO pokemons (name, type) VALUES (?, ?)
       SQL
-      DB[:conn].execute(sql, self.name, self.type, self.db)
-      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM pokemons")[0][0]
+      db.execute(sql, self.name, self.type, self.db)
+      @id = db.execute("SELECT last_insert_rowid() FROM pokemons")[0][0]
 
   end 
   
